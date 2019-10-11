@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Elemento do tipo simples (simpleType) com restrição de domínio e atributo. !-->
+<pizza xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="caloriasRules.xsd">
+    <!-- valor não superior a 2000 -->
+    <calorias unidade="KCAL"> 200</calorias>
+</pizza>
