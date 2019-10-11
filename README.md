@@ -1,1 +1,1 @@
-# 2019_2020
+# Repositório de exemplos: Processamento Estruturado de Informação 2019/2020 (LEI e LSIRC)
