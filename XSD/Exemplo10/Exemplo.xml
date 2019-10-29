@@ -5,10 +5,10 @@
       xsi:schemaLocation="http://www.aTascadaESTG.pt/Menu MenuTypes.xsd" xmlns:p="http://www.aTascadaESTG.pt/Pizza"> 
     
     <p:pizza codigo="VEP">
-            <name>sasd</name>
+            <name>Estranha</name>
             <ingredients>
                 <ingredient>
-                    <name>Alfsace</name>
+                    <name>Alface</name>
                     <category>Vegetal</category>
                     <unit>grams</unit>
                     <calories>23</calories>
