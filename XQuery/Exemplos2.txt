@@ -1,0 +1,28 @@
+(: Odenar os elementos :)
+for $x in doc("cd_catalog.xml")/CATALOG/CD
+where $x/PRICE>10
+order by $x/YEAR
+return $x/TITLE | $x/YEAR
+
+
+(: Exemplo com template :)
+
+<ul>
+{
+for $x in doc("cd_catalog.xml")/CATALOG/CD
+where $x/PRICE>10
+order by $x/YEAR
+return <li> {$x/TITLE} </li>
+}
+</ul>
+
+
+(: Exemplo com template, removendo o elemento Title :)
+<ul>
+{
+for $x in doc("cd_catalog.xml")/CATALOG/CD
+where $x/PRICE>10	
+order by $x/YEAR
+return <li> {data($x/TITLE)} </li>
+}
+</ul>

@@ -1,0 +1,27 @@
+(: XQuery Conditional Expressions :)
+
+for $x in doc("cd_catalog.xml")/CATALOG/CD
+where $x/COUNTRY = "USA" or $x/COUNTRY = "UK"
+return if ($x/COUNTRY="USA")
+       then <UNITED_STATES_AMERICA>{($x/TITLE)}</UNITED_STATES_AMERICA>
+       else <UNITED_KINGDOM>{($x/TITLE)}</UNITED_KINGDOM>
+
+
+(: LET como forma de declaração de variáveis :)
+let $x := (1 to 5)
+return <exemplo> {$x} </exemplo>
+
+(: Funções :)
+
+for $x in doc("cd_catalog.xml")/CATALOG/CD
+let $upperTitle := fn:upper-case($x/TITLE)
+return <TITLE>{$upperTitle}</TITLE>
+
+
+(: Função para calcular idade no ano atual:)
+declare function local:calculaIdade($dataNascimento as xs:date) as xs:integer?
+{
+   let $age :=   fn:year-from-date(fn:current-date()) - fn:year-from-date($dataNascimento)
+   return $age
+};
+<age>{local:calculaIdade(xs:date("1987-08-15"))}</age>

@@ -1,0 +1,22 @@
+(: Exemplo 1:  Extrair dados de um documento XML:)
+doc("cd_catalog.xml")
+
+(: Path Expressions - Utilização de XPATH para navegar num documento XML :)
+ doc("cd_catalog.xml")/CATALOG/CD
+(: ou :)
+ doc("cd_catalog.xml")//CD 
+
+(: Predicados :)
+ doc("cd_catalog.xml")/CATALOG/CD[PRICE > 10] 
+
+(: FLOWER EXPRESSIONS :)
+for $x in doc("cd_catalog.xml")/CATALOG/CD
+where $x/PRICE>10
+return $x/TITLE 
+
+
+(: Odenar os elementos :)
+for $x in doc("cd_catalog.xml")/CATALOG/CD
+where $x/PRICE>10
+order by $x/YEAR
+return $x/TITLE | $x/YEAR
