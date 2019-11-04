@@ -19,7 +19,7 @@ return <TITLE>{$upperTitle}</TITLE>
 
 
 (: Função para calcular idade no ano atual:)
-declare function local:calculaIdade($dataNascimento as xs:date) as xs:integer?
+declare function local:calculaIdade($dataNascimento as xs:date) as xs:integer
 {
    let $age :=   fn:year-from-date(fn:current-date()) - fn:year-from-date($dataNascimento)
    return $age
